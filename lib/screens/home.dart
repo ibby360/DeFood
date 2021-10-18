@@ -1,3 +1,6 @@
+import 'package:defood/screens/cards/card1.dart';
+import 'package:defood/screens/cards/card2.dart';
+import 'package:defood/screens/cards/card3.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -11,12 +14,9 @@ class _HomeState extends State<Home> {
   // TODO: Add state variables and functions
   int _selectedIndex = 0;
   static List<Widget> pages = <Widget>[
-    // TODO: Replace with card1
-    Container(color: Colors.green),
-    // TODO: Replace with card2
-    Container(color: Colors.red),
-    // TODO: Replace with card3
-    Container(color: Colors.blue),
+    const Card1(),
+    const Card2(),
+    const Card3(),
   ];
   void _onItemTapped(int index) {
     setState(() {
@@ -33,10 +33,7 @@ class _HomeState extends State<Home> {
           style: Theme.of(context).textTheme.headline6,
         ),
       ),
-      // TODO: Show selected tabs
       body: pages[_selectedIndex],
-      // TODO: Add bottom navogation bar
-
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Theme.of(context).textSelectionTheme.selectionColor,
         currentIndex: _selectedIndex,
@@ -47,11 +44,11 @@ class _HomeState extends State<Home> {
             label: 'Card',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
+            icon: Icon(Icons.person),
             label: 'Card2',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.card_giftcard),
+            icon: Icon(Icons.tag),
             label: 'Card3',
           ),
         ],
